@@ -12,7 +12,7 @@ function handleChoice(choice) {
         questionText.innerText = "恭喜你选对了！！";
         resultText.innerText = "爱上我是如此的正常的哟";
     } else if (choice === 'no') {
-        questionText.innerText = "不可以重选！！！";
+        questionText.innerText = "不可以，重选！！！";
         resultText.innerText = "我叫你重新按过！！！";
     }
 
