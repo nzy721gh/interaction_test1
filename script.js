@@ -14,10 +14,11 @@ function handleChoice(choice) {
     } else if (choice === 'no') {
         questionText.innerText = "不可以，重选！！！";
         resultText.innerText = "我叫你重新按过！！！";
+        resetBtn.style.display = 'inline-block';
     }
 
     // Show the reset button
-    resetBtn.style.display = 'inline-block';
+    
 }
 
 function resetPage() {
