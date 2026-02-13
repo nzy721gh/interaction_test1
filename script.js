@@ -8,12 +8,12 @@ function handleChoice(choice) {
     btnGroup.style.display = 'none';
 
     // Scenario Logic
-    if (choice === 'enter') {
-        questionText.innerText = "Scenario 1: The Explorer";
-        resultText.innerText = "You find a room filled with gold and ancient scrolls! You are now a wealthy scholar.";
-    } else if (choice === 'run') {
-        questionText.innerText = "Scenario 2: The Cautious";
-        resultText.innerText = "You live a long, safe, and incredibly boring life. The door remains a mystery forever.";
+    if (choice === 'yes') {
+        questionText.innerText = "恭喜你选对了！！";
+        resultText.innerText = "爱上我是如此的正常的哟";
+    } else if (choice === 'no') {
+        questionText.innerText = "不可以重选！！！";
+        resultText.innerText = "我叫你重新按过！！！";
     }
 
     // Show the reset button
