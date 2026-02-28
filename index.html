@@ -1,9 +1,27 @@
-<div class="container">
-    <h1 id="question">你<span class="highlight">爱</span>我吗?</h1>
-    
-    <div class="button-group">
-        <button onclick="handleChoice('yes')">爱</button>
-        <button id="no-btn" onmouseover="moveButton()" onclick="handleChoice('no')">No</button>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小惊喜</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <audio id="bgm" loop>
+        <source src="https://music.163.com/song/media/outer/url?id=1908359411.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="container">
+        <h1 id="question">你<span class="highlight">爱</span>我吗?</h1>
+        <div id="result"></div>
+        
+        <div class="button-group">
+            <button class="btn-yes" onclick="handleChoice('yes')">爱</button>
+            <button id="no-btn" class="btn-no" onmouseover="moveButton()">No</button>
+        </div>
     </div>
 
-</div>
+    <script src="script.js"></script>
+</body>
+</html>
