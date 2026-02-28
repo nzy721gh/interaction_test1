@@ -1,4 +1,4 @@
-/* Center the entire container in the middle of the screen */
+/* 全局样式 */
 body {
     margin: 0;
     padding: 0;
@@ -7,56 +7,87 @@ body {
     justify-content: center;
     align-items: center;
     font-family: 'Microsoft YaHei', sans-serif;
-    background-color: #f0f0f0; /* Optional: light background */
+    /* 更换为更有氛围感的粉色渐变 */
+    background: linear-gradient(135deg, #fff5f7 0%, #ffdee9 100%);
+    overflow: hidden;
 }
 
 .container {
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 40px;
+    border-radius: 30px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-/* Style for the specific word */
+#question {
+    font-size: 2.5rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
 .highlight {
-    color: red;
+    color: #ff4b2b;
     font-weight: bold;
-    font-size: 1.2em; /* Makes it slightly larger for emphasis */
+    font-size: 1.3em;
+    text-shadow: 2px 2px 5px rgba(255, 75, 43, 0.2);
+}
+
+#result {
+    font-size: 1.3rem;
+    color: #ff6b81;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
 .button-group {
     display: flex;
-    gap: 20px;
-    height: 50px; /* Gives the buttons some breathing room */
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    min-height: 60px;
 }
 
+/* 按钮通用样式 */
 button {
-    padding: 10px 20px;
+    padding: 12px 35px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
+    border: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
+.btn-yes {
+    background-color: #ff4b2b;
+    color: white;
+}
 
-/* The heart element style */
+.btn-yes:hover {
+    transform: scale(1.1);
+    background-color: #ff3610;
+}
+
+.btn-no {
+    background-color: #a0a0a0;
+    color: white;
+}
+
+/* 爱心粒子动画 */
 .heart {
     position: absolute;
     color: #ff4b2b;
     font-size: 24px;
     user-select: none;
-    pointer-events: none; /* So they don't block clicks */
+    pointer-events: none;
     z-index: 1000;
     animation: floatUp 1.5s ease-out forwards;
 }
 
-/* The floating animation */
 @keyframes floatUp {
-    0% {
-        transform: translate(0, 0) scale(1);
-        opacity: 1;
-    }
-    100% {
-        transform: translate(var(--x), var(--y)) scale(1.5);
-        opacity: 0;
-    }
+    0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
+    100% { transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y))) scale(1.5); opacity: 0; }
 }
