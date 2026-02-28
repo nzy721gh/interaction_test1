@@ -1,25 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Scenario</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <div class="container">
-        <h1 id="question">你爱我吗?</h1>
-        
-        <div class="button-group">
-            <button onclick="handleChoice('yes')">爱</button>
-            <button id="no-btn" onmouseover="moveButton()">No</button>
-        </div>
-
-        <p id="result"></p>
-        <button id="reset-btn" onclick="resetPage()" style="display:none;">重新选</button>
+<div class="container">
+    <h1 id="question">你<span class="highlight">爱</span>我吗?</h1>
+    
+    <div class="button-group">
+        <button onclick="handleChoice('yes')">爱</button>
+        <button id="no-btn" onmouseover="moveButton()" onclick="handleChoice('no')">No</button>
     </div>
 
-    <script src="script.js"></script>
-</body>
-</html>
+</div>
