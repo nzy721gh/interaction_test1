@@ -12,16 +12,22 @@ function handleChoice(choice) {
         questionText.innerText = "恭喜你选对了！！";
         resultText.innerText = "爱上我是如此的正常的哟";
         resetBtn.style.display = 'none';
-    } else if (choice === 'no') {
-        questionText.innerText = "不可以，重选！！！";
-        resultText.innerText = "我叫你重新按过！！！";
-        resetBtn.style.display = 'inline-block';
-    }
+    } 
 
     // Show the reset button
     
 }
 
-function resetPage() {
-    location.reload(); // Refreshes the page to start over
+function moveButton() {
+    const btn = document.getElementById('no-btn');
+    
+    // Calculate random positions within the visible window
+    // We subtract the button size so it doesn't go off-screen
+    const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+    const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+
+    // Apply new coordinates
+    btn.style.position = 'absolute';
+    btn.style.left = x + 'px';
+    btn.style.top = y + 'px';
 }
